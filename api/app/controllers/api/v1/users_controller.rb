@@ -6,7 +6,7 @@ class Api::V1::UsersController < ApplicationController
             token = encode_token({user_id: user.id})
             render json: {user: UserSerializer.new(user), jwt: token}
         else
-            render json: {error: "Error creating user"}
+            render json: {error: user.errors.full_messages} , status: :not_acceptable
         end
     end
     def profile
