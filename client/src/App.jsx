@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import SplashScreen from './components/SplashScreen'
+import LoginForm from "./components/LoginForm";
 import './App.css'
 
 function App() {
@@ -28,6 +29,11 @@ function App() {
       
     {storedToken ? null : 
     <Route path="/" element={<SplashScreen />} />}
+
+    <Route
+          path="/login"
+          element={<LoginForm setStoredToken={setStoredToken} />}
+        />
 
     </Routes>
   </div>
