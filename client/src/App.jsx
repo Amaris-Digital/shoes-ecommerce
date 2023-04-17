@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import SplashScreen from './components/SplashScreen'
 import LoginForm from "./components/LoginForm";
+import SignUp from "./components/SignUp";
 import './App.css'
 
 function App() {
@@ -33,6 +34,11 @@ function App() {
     <Route
           path="/login"
           element={<LoginForm setStoredToken={setStoredToken} />}
+        />
+    
+    <Route
+          path="/signUp"
+          element={<SignUp setStoredToken={setStoredToken} />}
         />
 
     </Routes>
