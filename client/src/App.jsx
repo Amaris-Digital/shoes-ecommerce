@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import SplashScreen from './components/SplashScreen'
 import LoginForm from "./components/LoginForm";
 import SignUp from "./components/SignUp";
+import ProductCard from "./components/Products";
 import './App.css'
 
 function App() {
@@ -24,12 +25,16 @@ function App() {
   }, [storedToken]);
 
   return (
-    <div className="App bg-black">
+    <div className="App bg-black"> 
+    
     
     <Routes>
       
-    {storedToken ? null : 
-    <Route path="/" element={<SplashScreen />} />}
+    {storedToken ? (
+          <Route path="/" element={<ProductCard />} />
+        ) : (
+          <Route path="/" element={<SplashScreen />} />
+        )}
 
     <Route
           path="/login"
@@ -40,6 +45,7 @@ function App() {
           path="/signUp"
           element={<SignUp setStoredToken={setStoredToken} />}
         />
+      
 
     </Routes>
   </div>
