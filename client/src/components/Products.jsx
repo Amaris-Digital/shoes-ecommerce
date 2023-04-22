@@ -14,7 +14,11 @@ function ProductCard() {
   }, []);
 
   return (
+      <div>
+          <h2 className="text-4xl font-bold pt-[32px] text-white ">Products</h2>
+      
     <div className="flex flex-wrap justify-center py-8 max-w-[1240px] mx-auto">
+    
       {products.map((product) => (
         <div
           key={product.id}
@@ -41,6 +45,7 @@ function ProductCard() {
           </Link>
         </div>
       ))}
+    </div>
     </div>
   );
 }
