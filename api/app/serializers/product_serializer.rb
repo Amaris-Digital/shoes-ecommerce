@@ -4,4 +4,5 @@ class ProductSerializer < ActiveModel::Serializer
   validates :description, presence: true
   validates :image, presence: true
   validates :price, presence: true
+  has_many :reviews
 end
