@@ -25,7 +25,7 @@ function ProductCard() {
           className="w-full sm:w-1/2 lg:w-1/3 p-4 flex hover:scale-105 transition-all duration-500 cursor-pointer"
         >
           <Link
-            to={`/product/${product.id}`}
+            to={`/products/${product.id}`}
             className=" p-4 flex-1 flex flex-col "
           >
             <div className="bg-white rounded-lg overflow-hidden">
