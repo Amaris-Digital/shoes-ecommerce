@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import SplashScreen from './components/SplashScreen'
+import SplashScreen from "./components/SplashScreen";
 import LoginForm from "./components/LoginForm";
 import SignUp from "./components/SignUp";
 import ProductCard from "./components/Products";
-import './App.css'
+import Product from "./components/Product";
+import "./App.css";
 
 function App() {
   const [storedToken, setStoredToken] = useState(localStorage.getItem("token"));
@@ -25,31 +26,31 @@ function App() {
   }, [storedToken]);
 
   return (
-    <div className="App bg-black"> 
-    
-    
-    <Routes>
-      
-    {storedToken ? (
+    <div className="App bg-black">
+      <Routes>
+        {storedToken ? (
           <Route path="/" element={<ProductCard />} />
         ) : (
           <Route path="/" element={<SplashScreen />} />
         )}
 
-    <Route
+        <Route
           path="/login"
           element={<LoginForm setStoredToken={setStoredToken} />}
         />
-    
-    <Route
+
+        <Route
+          path="/products/:id"
+          element={<Product loggedInUserId={loggedInUserId} />}
+        />
+
+        <Route
           path="/signUp"
           element={<SignUp setStoredToken={setStoredToken} />}
         />
-      
-
-    </Routes>
-  </div>
-  )
+      </Routes>
+    </div>
+  );
 }
 
-export default App
+export default App;
