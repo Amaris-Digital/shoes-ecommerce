@@ -1,5 +1,5 @@
 import React from 'react';
-import ProductCard from './Product';
+import ProductCard from './Products';
 import Review from './ProductReview';
 
 
