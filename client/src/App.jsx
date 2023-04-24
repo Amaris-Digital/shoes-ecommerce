@@ -3,7 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import SplashScreen from './components/SplashScreen'
 import LoginForm from "./components/LoginForm";
 import SignUp from "./components/SignUp";
-import ProductCard from "./components/Products";
+import ProductPage from "./components/ProductPage";
+
 
 
 function App() {
@@ -31,7 +32,7 @@ function App() {
     <Routes>
       
     {storedToken ? (
-          <Route path="/" element={<ProductCard />} />
+          <Route path="/" element={<ProductPage />} />
         ) : (
           <Route path="/" element={<SplashScreen />} />
         )}
