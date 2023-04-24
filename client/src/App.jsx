@@ -4,7 +4,7 @@ import SplashScreen from './components/SplashScreen'
 import LoginForm from "./components/LoginForm";
 import SignUp from "./components/SignUp";
 import ProductCard from "./components/Products";
-import './App.css'
+
 
 function App() {
   const [storedToken, setStoredToken] = useState(localStorage.getItem("token"));
